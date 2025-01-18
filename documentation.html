@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Documentation - CodeLearner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="documentation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <nav>
+        <div class="logo">CodeLearner</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#dsa">DSA Sheet</a></li>
+            <li><a href="index.html#courses">Courses</a></li>
+            <li><a href="index.html#compiler">Compiler</a></li>
+            <li><a href="index.html#roadmap">Roadmap</a></li>
+            <li><a href="#" class="active">Documentation</a></li>
+        </ul>
+    </nav>
+
+    <div class="documentation-container">
+        <aside class="sidebar">
+            <div class="search-box">
+                <input type="text" id="searchDocs" placeholder="Search documentation...">
+            </div>
+            <nav class="doc-nav">
+                <ul>
+                    <li>
+                        <a href="#arrays" class="active"><i class="fas fa-layer-group"></i> Arrays</a>
+                        <ul>
+                            <li><a href="#array-introduction">Introduction</a></li>
+                            <li><a href="#array-operations">Basic Operations</a></li>
+                            <li><a href="#array-algorithms">Common Algorithms</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#linked-lists"><i class="fas fa-link"></i> Linked Lists</a>
+                        <ul>
+                            <li><a href="#ll-introduction">Introduction</a></li>
+                            <li><a href="#ll-types">Types of Linked Lists</a></li>
+                            <li><a href="#ll-operations">Operations</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#stacks"><i class="fas fa-boxes-stacked"></i> Stacks</a>
+                        <ul>
+                            <li><a href="#stack-intro">Introduction</a></li>
+                            <li><a href="#stack-applications">Applications</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#queues"><i class="fas fa-people-line"></i> Queues</a>
+                        <ul>
+                            <li><a href="#queue-intro">Introduction</a></li>
+                            <li><a href="#queue-types">Types of Queues</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#trees"><i class="fas fa-tree"></i> Trees</a>
+                        <ul>
+                            <li><a href="#tree-intro">Introduction</a></li>
+                            <li><a href="#tree-types">Types of Trees</a></li>
+                            <li><a href="#tree-traversal">Tree Traversal</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#graphs"><i class="fas fa-project-diagram"></i> Graphs</a>
+                        <ul>
+                            <li><a href="#graph-intro">Introduction</a></li>
+                            <li><a href="#graph-representations">Representations</a></li>
+                            <li><a href="#graph-algorithms">Algorithms</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sorting"><i class="fas fa-sort"></i> Sorting Algorithms</a>
+                        <ul>
+                            <li><a href="#basic-sorting">Basic Sorting</a></li>
+                            <li><a href="#advanced-sorting">Advanced Sorting</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#searching"><i class="fas fa-search"></i> Searching Algorithms</a>
+                        <ul>
+                            <li><a href="#linear-search">Linear Search</a></li>
+                            <li><a href="#binary-search">Binary Search</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#dynamic-programming"><i class="fas fa-code-branch"></i> Dynamic Programming</a>
+                        <ul>
+                            <li><a href="#dp-intro">Introduction</a></li>
+                            <li><a href="#dp-problems">Common Problems</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section id="arrays" class="doc-section">
+                <h1>Arrays</h1>
+                <div class="visualization-container" id="arrayVisualizer">
+                    <!-- Array visualization will be rendered here -->
+                </div>
+                
+                <div id="array-operations">
+                    <h2>Basic Operations</h2>
+                    <div class="interactive-controls">
+                        <button class="control-button" onclick="arrayInsert()">Insert</button>
+                        <button class="control-button" onclick="arrayDelete()">Delete</button>
+                        <button class="control-button" onclick="arraySearch()">Search</button>
+                    </div>
+
+                    <div class="operation-card">
+                        <h3>Insertion</h3>
+                        <p>Time Complexity: O(n) for arbitrary position, O(1) for end</p>
+                        <pre><code class="language-python">
+def insert_at_index(arr, index, element):
+    if index < 0 or index > len(arr):
+        raise IndexError("Index out of bounds")
+    arr.append(None)  # Make space
+    for i in range(len(arr)-1, index, -1):
+        arr[i] = arr[i-1]
+    arr[index] = element
+    return arr
+
+# Example usage
+arr = [1, 2, 3, 4, 5]
+insert_at_index(arr, 2, 10)  # Result: [1, 2, 10, 3, 4, 5]</code></pre>
+                    </div>
+
+                    <div class="operation-card">
+                        <h3>Deletion</h3>
+                        <p>Time Complexity: O(n) for arbitrary position, O(1) for end</p>
+                        <pre><code class="language-python">
+def delete_at_index(arr, index):
+    if index < 0 or index >= len(arr):
+        raise IndexError("Index out of bounds")
+    for i in range(index, len(arr)-1):
+        arr[i] = arr[i+1]
+    arr.pop()
+    return arr
+
+# Example usage
+arr = [1, 2, 3, 4, 5]
+delete_at_index(arr, 2)  # Result: [1, 2, 4, 5]</code></pre>
+                    </div>
+
+                    <div class="operation-card">
+                        <h3>Search</h3>
+                        <p>Time Complexity: O(n) for linear search, O(log n) for binary search (sorted array)</p>
+                        <pre><code class="language-python">
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return -1  # Element not found
+
+# Example usage
+arr = [1, 2, 3, 4, 5]
+result = binary_search(arr, 3)  # Result: 2 (index)</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="stacks" class="doc-section">
+                <h1>Stacks</h1>
+                <div class="visualization-container" id="stackVisualizer">
+                    <!-- Stack visualization will be rendered here -->
+                </div>
+
+                <div id="stack-operations">
+                    <h2>Stack Operations</h2>
+                    <div class="interactive-controls">
+                        <button class="control-button" onclick="stackPush()">Push</button>
+                        <button class="control-button" onclick="stackPop()">Pop</button>
+                        <button class="control-button" onclick="stackPeek()">Peek</button>
+                    </div>
+
+                    <div class="operation-card">
+                        <h3>Stack Implementation</h3>
+                        <pre><code class="language-python">
+class Stack:
+    def __init__(self):
+        self.items = []
+        self.min_items = []  # For min stack implementation
+    
+    def push(self, item):
+        self.items.append(item)
+        # Update min stack
+        if not self.min_items or item <= self.min_items[-1]:
+            self.min_items.append(item)
+    
+    def pop(self):
+        if not self.is_empty():
+            item = self.items.pop()
+            if item == self.min_items[-1]:
+                self.min_items.pop()
+            return item
+        raise IndexError("Pop from empty stack")
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+        raise IndexError("Peek at empty stack")
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def get_min(self):
+        if not self.is_empty():
+            return self.min_items[-1]
+        raise IndexError("Min from empty stack")</code></pre>
+                    </div>
+
+                    <div class="operation-card">
+                        <h3>Common Stack Problems</h3>
+                        <h4>1. Valid Parentheses</h4>
+                        <pre><code class="language-python">
+def is_valid_parentheses(s):
+    stack = []
+    brackets = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in brackets.values():
+            stack.append(char)
+        elif char in brackets:
+            if not stack or stack.pop() != brackets[char]:
+                return False
+    
+    return len(stack) == 0
+
+# Example usage
+print(is_valid_parentheses("({[]})"))  # True
+print(is_valid_parentheses("({[}])"))  # False</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="queues" class="doc-section">
+                <h1>Queues</h1>
+                <div class="visualization-container" id="queueVisualizer">
+                    <!-- Queue visualization will be rendered here -->
+                </div>
+
+                <div id="queue-operations">
+                    <h2>Queue Operations</h2>
+                    <div class="interactive-controls">
+                        <button class="control-button" onclick="queueEnqueue()">Enqueue</button>
+                        <button class="control-button" onclick="queueDequeue()">Dequeue</button>
+                        <button class="control-button" onclick="queuePeek()">Peek</button>
+                    </div>
+
+                    <div class="operation-card">
+                        <h3>Queue Implementation</h3>
+                        <pre><code class="language-python">
+class Queue:
+    def __init__(self):
+        self.items = []
+        self.front = 0
+        self.rear = 0
+    
+    def enqueue(self, item):
+        self.items.append(item)
+        self.rear += 1
+    
+    def dequeue(self):
+        if not self.is_empty():
+            item = self.items[self.front]
+            self.front += 1
+            if self.front == self.rear:
+                self.front = self.rear = 0
+                self.items = []
+            return item
+        raise IndexError("Dequeue from empty queue")
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.items[self.front]
+        raise IndexError("Peek at empty queue")
+    
+    def is_empty(self):
+        return self.front == self.rear
+    
+    def size(self):
+        return self.rear - self.front</code></pre>
+                    </div>
+
+                    <div class="operation-card">
+                        <h3>Circular Queue Implementation</h3>
+                        <pre><code class="language-python">
+class CircularQueue:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.items = [None] * capacity
+        self.front = self.rear = -1
+    
+    def enqueue(self, item):
+        if self.is_full():
+            raise IndexError("Queue is full")
+        
+        if self.front == -1:
+            self.front = 0
+        self.rear = (self.rear + 1) % self.capacity
+        self.items[self.rear] = item
+    
+    def dequeue(self):
+        if self.is_empty():
+            raise IndexError("Queue is empty")
+        
+        item = self.items[self.front]
+        if self.front == self.rear:
+            self.front = self.rear = -1
+        else:
+            self.front = (self.front + 1) % self.capacity
+        return item
+    
+    def is_empty(self):
+        return self.front == -1
+    
+    def is_full(self):
+        return (self.rear + 1) % self.capacity == self.front</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="graphs" class="doc-section">
+                <h1>Graphs</h1>
+                <div class="visualization-container" id="graphVisualizer">
+                    <!-- Graph visualization will be rendered here -->
+                </div>
+
+                <div id="graph-operations">
+                    <h2>Graph Operations</h2>
+                    <div class="interactive-controls">
+                        <button class="control-button" onclick="graphAddNode()">Add Node</button>
+                        <button class="control-button" onclick="graphAddEdge()">Add Edge</button>
+                        <button class="control-button" onclick="graphRemoveNode()">Remove Node</button>
+                        <button class="control-button" onclick="graphRemoveEdge()">Remove Edge</button>
+                    </div>
+
+                    <div class="operation-card">
+                        <h3>Graph Implementation</h3>
+                        <pre><code class="language-python">
+class Graph:
+    def __init__(self):
+        self.adj_list = {}
+    
+    def add_node(self, node):
+        if node not in self.adj_list:
+            self.adj_list[node] = []
+    
+    def add_edge(self, node1, node2):
+        if node1 in self.adj_list and node2 in self.adj_list:
+            self.adj_list[node1].append(node2)
+            self.adj_list[node2].append(node1)
+    
+    def remove_node(self, node):
+        if node in self.adj_list:
+            del self.adj_list[node]
+            for neighbors in self.adj_list.values():
+                if node in neighbors:
+                    neighbors.remove(node)
+    
+    def remove_edge(self, node1, node2):
+        if node1 in self.adj_list and node2 in self.adj_list:
+            if node2 in self.adj_list[node1]:
+                self.adj_list[node1].remove(node2)
+            if node1 in self.adj_list[node2]:
+                self.adj_list[node2].remove(node1)</code></pre>
+                    </div>
+
+                    <div class="operation-card">
+                        <h3>Graph Traversal</h3>
+                        <h4>1. Breadth-First Search (BFS)</h4>
+                        <pre><code class="language-python">
+from collections import deque
+
+def bfs(graph, start):
+    visited = set()
+    queue = deque([start])
+    visited.add(start)
+    
+    while queue:
+        node = queue.popleft()
+        print(node, end=' ')
+        
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+
+# Example usage
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E']
+}
+bfs(graph, 'A')</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="linked-lists" class="doc-section">
+                <h1>Linked Lists</h1>
+                <div id="ll-introduction">
+                    <h2>Introduction to Linked Lists</h2>
+                    <p>A linked list is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence.</p>
+                    
+                    <div class="code-example">
+                        <h3>Linked List Implementation</h3>
+                        <pre><code class="language-python">
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="trees" class="doc-section">
+                <h1>Trees</h1>
+                <div id="tree-intro">
+                    <h2>Introduction to Trees</h2>
+                    <p>A tree is a hierarchical data structure consisting of nodes connected by edges. Each node contains a value and references to other nodes (children).</p>
+                    
+                    <div class="code-example">
+                        <h3>Binary Tree Implementation</h3>
+                        <pre><code class="language-python">
+class TreeNode:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, data):
+        if not self.root:
+            self.root = TreeNode(data)
+            return
+        
+        queue = [self.root]
+        while queue:
+            node = queue.pop(0)
+            if not node.left:
+                node.left = TreeNode(data)
+                return
+            if not node.right:
+                node.right = TreeNode(data)
+                return
+            queue.append(node.left)
+            queue.append(node.right)
+                        </code></pre>
+                    </div>
+                </div>
+
+                <div id="tree-traversal">
+                    <h2>Tree Traversal</h2>
+                    <div class="algorithm-card">
+                        <h3>Inorder Traversal</h3>
+                        <pre><code class="language-python">
+def inorder_traversal(root):
+    if root:
+        inorder_traversal(root.left)
+        print(root.data, end=' ')
+        inorder_traversal(root.right)
+                        </code></pre>
+                    </div>
+                    <div class="algorithm-card">
+                        <h3>Preorder Traversal</h3>
+                        <pre><code class="language-python">
+def preorder_traversal(root):
+    if root:
+        print(root.data, end=' ')
+        preorder_traversal(root.left)
+        preorder_traversal(root.right)
+                        </code></pre>
+                    </div>
+                    <div class="algorithm-card">
+                        <h3>Postorder Traversal</h3>
+                        <pre><code class="language-python">
+def postorder_traversal(root):
+    if root:
+        postorder_traversal(root.left)
+        postorder_traversal(root.right)
+        print(root.data, end=' ')
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sorting" class="doc-section">
+                <h1>Sorting Algorithms</h1>
+                <div id="basic-sorting">
+                    <h2>Basic Sorting Algorithms</h2>
+                    <div class="algorithm-card">
+                        <h3>Bubble Sort</h3>
+                        <p>Time Complexity: O(n²)</p>
+                        <pre><code class="language-python">
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+                        </code></pre>
+                    </div>
+                    <div class="algorithm-card">
+                        <h3>Selection Sort</h3>
+                        <p>Time Complexity: O(n²)</p>
+                        <pre><code class="language-python">
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+                        </code></pre>
+                    </div>
+                </div>
+
+                <div id="advanced-sorting">
+                    <h2>Advanced Sorting Algorithms</h2>
+                    <div class="algorithm-card">
+                        <h3>Quick Sort</h3>
+                        <p>Time Complexity: O(n log n) average case</p>
+                        <pre><code class="language-python">
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+                        </code></pre>
+                    </div>
+                    <div class="algorithm-card">
+                        <h3>Merge Sort</h3>
+                        <p>Time Complexity: O(n log n)</p>
+                        <pre><code class="language-python">
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+        
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    
+    return merge(left, right)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+    
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dynamic-programming" class="doc-section">
+                <h1>Dynamic Programming</h1>
+                <div id="dp-intro">
+                    <h2>Introduction to Dynamic Programming</h2>
+                    <p>Dynamic Programming is a method for solving complex problems by breaking them down into simpler subproblems. It is applicable when subproblems share subsubproblems.</p>
+                    
+                    <div class="code-example">
+                        <h3>Fibonacci Series using DP</h3>
+                        <pre><code class="language-python">
+def fibonacci_dp(n):
+    # Initialize array to store Fibonacci numbers
+    dp = [0] * (n + 1)
+    dp[1] = 1
+    
+    # Build up the solution
+    for i in range(2, n + 1):
+        dp[i] = dp[i-1] + dp[i-2]
+    
+    return dp[n]
+                        </code></pre>
+                    </div>
+                </div>
+
+                <div id="dp-problems">
+                    <h2>Common DP Problems</h2>
+                    <div class="algorithm-card">
+                        <h3>0/1 Knapsack Problem</h3>
+                        <pre><code class="language-python">
+def knapsack(values, weights, capacity):
+    n = len(values)
+    dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]
+    
+    for i in range(1, n + 1):
+        for w in range(capacity + 1):
+            if weights[i-1] <= w:
+                dp[i][w] = max(
+                    values[i-1] + dp[i-1][w-weights[i-1]],
+                    dp[i-1][w]
+                )
+            else:
+                dp[i][w] = dp[i-1][w]
+    
+    return dp[n][capacity]
+                        </code></pre>
+                    </div>
+                    <div class="algorithm-card">
+                        <h3>Longest Common Subsequence</h3>
+                        <pre><code class="language-python">
+def lcs(str1, str2):
+    m, n = len(str1), len(str2)
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if str1[i-1] == str2[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+            else:
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+    
+    return dp[m][n]
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="documentation.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLearner - Your Coding Journey Starts Here</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">CodeLearner</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="dsa-sheet.html" class="highlight-link">DSA Sheet</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#compiler">Compiler</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Begin Your Coding Journey</h1>
+        <p>Learn, Practice, and Master Programming</p>
+    </section>
+
+    <section id="dsa" class="dsa-section">
+        <h2 class="reveal">DSA Practice Sheet</h2>
+        <div class="dsa-grid">
+            <div class="dsa-card reveal" data-topic="Arrays">
+                <h3>Arrays</h3>
+                <p>50 Problems</p>
+                <div class="dsa-progress">
+                    <div class="dsa-progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="dsa-card reveal" data-topic="Linked Lists">
+                <h3>Linked Lists</h3>
+                <p>30 Problems</p>
+                <div class="dsa-progress">
+                    <div class="dsa-progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="dsa-card reveal" data-topic="Trees">
+                <h3>Trees</h3>
+                <p>40 Problems</p>
+                <div class="dsa-progress">
+                    <div class="dsa-progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="dsa-card reveal" data-topic="Dynamic Programming">
+                <h3>Dynamic Programming</h3>
+                <p>60 Problems</p>
+                <div class="dsa-progress">
+                    <div class="dsa-progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="courses-section">
+        <h2 class="reveal">Popular Courses</h2>
+        <div class="course-grid">
+            <div class="course-card reveal">
+                <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3" alt="Python Course">
+                <h3>Python Programming</h3>
+                <p>Learn Python from scratch</p>
+                <button>Start Learning</button>
+            </div>
+            <div class="course-card reveal">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Full Stack Development</p>
+                <button>Start Learning</button>
+            </div>
+            <div class="course-card reveal">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3" alt="Java Course">
+                <h3>Java Programming</h3>
+                <p>Master Java fundamentals</p>
+                <button>Start Learning</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="compiler" class="compiler-section">
+        <h2>Online Compiler</h2>
+        <div class="compiler-container">
+            <div class="language-selector">
+                <select id="language">
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="java">Java</option>
+                    <option value="cpp">C++</option>
+                </select>
+            </div>
+            <div class="editor">
+                <textarea id="code-editor" placeholder="Write your code here..."></textarea>
+            </div>
+            <button id="run-code">Run Code</button>
+            <div class="output" id="output">
+                <p>Output will appear here...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="roadmap-section">
+        <h2 class="reveal">Learning Roadmap</h2>
+        <div class="roadmap-container">
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <h3>Step 1: Programming Fundamentals</h3>
+                    <p>Master the basics of programming and computer science</p>
+                    <div class="skills">
+                        <span class="skill-tag">Variables</span>
+                        <span class="skill-tag">Data Types</span>
+                        <span class="skill-tag">Control Flow</span>
+                        <span class="skill-tag">Functions</span>
+                    </div>
+                </div>
+            </div>
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <h3>Step 2: Data Structures</h3>
+                    <p>Learn essential data structures for efficient programming</p>
+                    <div class="skills">
+                        <span class="skill-tag">Arrays</span>
+                        <span class="skill-tag">Linked Lists</span>
+                        <span class="skill-tag">Trees</span>
+                        <span class="skill-tag">Graphs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <h3>Step 3: Algorithms</h3>
+                    <p>Master common algorithmic techniques and problem-solving</p>
+                    <div class="skills">
+                        <span class="skill-tag">Sorting</span>
+                        <span class="skill-tag">Searching</span>
+                        <span class="skill-tag">Dynamic Programming</span>
+                        <span class="skill-tag">Greedy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <h3>Step 4: Advanced Topics</h3>
+                    <p>Dive into advanced programming concepts</p>
+                    <div class="skills">
+                        <span class="skill-tag">System Design</span>
+                        <span class="skill-tag">Design Patterns</span>
+                        <span class="skill-tag">Database</span>
+                        <span class="skill-tag">APIs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="roadmap-item">
+                <div class="roadmap-content">
+                    <h3>Step 5: Projects</h3>
+                    <p>Build real-world projects to apply your knowledge</p>
+                    <div class="skills">
+                        <span class="skill-tag">Web Apps</span>
+                        <span class="skill-tag">Mobile Apps</span>
+                        <span class="skill-tag">APIs</span>
+                        <span class="skill-tag">Full Stack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="resources">
+        <h2>Learning Resources</h2>
+        <div class="resources-grid">
+            <!-- DSA Course -->
+            <div class="resource-card">
+                <i class="fas fa-code"></i>
+                <h3>DSA Complete Course</h3>
+                <p>Complete DSA Bootcamp by Kunal Kushwaha</p>
+                <div class="video-container">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/videoseries?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ" title="DSA Course" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ" target="_blank" class="resource-link">Watch Full Playlist <i class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            <!-- Love Babbar DSA Sheet -->
+            <div class="resource-card">
+                <i class="fas fa-tasks"></i>
+                <h3>Love Babbar DSA Sheet</h3>
+                <p>450 DSA Questions Solution</p>
+                <div class="video-container">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/videoseries?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA" title="Love Babbar DSA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA" target="_blank" class="resource-link">Watch Full Playlist <i class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            <!-- Web Development Course -->
+            <div class="resource-card">
+                <i class="fas fa-globe"></i>
+                <h3>Web Development Course</h3>
+                <p>Complete Web Dev Course by CodeWithHarry</p>
+                <div class="video-container">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/videoseries?list=PLu0W_9lII9agiCUZYRsvtGTXdxkzPyItg" title="Web Development Course" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PLu0W_9lII9agiCUZYRsvtGTXdxkzPyItg" target="_blank" class="resource-link">Watch Full Playlist <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CodeLearner. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

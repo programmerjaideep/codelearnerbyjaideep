@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Practice Sheet - CodeLearner</title>
+    <link rel="stylesheet" href="dsa-sheet.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">CodeLearner</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dsa-sheet.html" class="active">DSA Sheet</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+            <li><a href="index.html#courses">Courses</a></li>
+            <li><a href="index.html#compiler">Compiler</a></li>
+            <li><a href="index.html#roadmap">Roadmap</a></li>
+            <li><a href="index.html#resources">Resources</a></li>
+        </ul>
+    </nav>
+
+    <div class="progress-bar"></div>
+
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="dsa-container">
+        <aside class="filters-sidebar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchProblems" placeholder="Search problems...">
+            </div>
+            
+            <div class="filter-section">
+                <h3>Difficulty</h3>
+                <div class="filter-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="easy" checked>
+                        <span class="checkmark"></span>
+                        Easy
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="medium" checked>
+                        <span class="checkmark"></span>
+                        Medium
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="hard" checked>
+                        <span class="checkmark"></span>
+                        Hard
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Topics</h3>
+                <div class="filter-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="arrays" checked>
+                        <span class="checkmark"></span>
+                        Arrays
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="strings" checked>
+                        <span class="checkmark"></span>
+                        Strings
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="linked-lists" checked>
+                        <span class="checkmark"></span>
+                        Linked Lists
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="trees" checked>
+                        <span class="checkmark"></span>
+                        Trees
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="graphs" checked>
+                        <span class="checkmark"></span>
+                        Graphs
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="dp" checked>
+                        <span class="checkmark"></span>
+                        Dynamic Programming
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Status</h3>
+                <div class="filter-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="todo" checked>
+                        <span class="checkmark"></span>
+                        Todo
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="solved" checked>
+                        <span class="checkmark"></span>
+                        Solved
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" value="attempted" checked>
+                        <span class="checkmark"></span>
+                        Attempted
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <main class="problems-list">
+            <div class="list-header">
+                <div class="header-status">#</div>
+                <div class="header-title">Title</div>
+                <div class="header-difficulty">Difficulty</div>
+                <div class="header-acceptance">Acceptance</div>
+                <div class="header-topics">Topics</div>
+            </div>
+            
+            <div class="problems-container" id="problemsList">
+                <!-- Problems will be dynamically inserted here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="leetcode-problems.js"></script>
+    <script src="dsa-sheet.js"></script>
+</body>
+</html>
